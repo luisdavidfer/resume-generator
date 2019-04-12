@@ -1,0 +1,157 @@
+/* Estilo Proyecto Entornos */
+
+/* DISEÑO GENERAL */
+
+#contenedor {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 30px;
+    background-color: #00405d;
+}
+
+body {
+    margin: 0;
+    background-color: #00405d;
+}
+
+.rojo {
+    color: red;
+}
+
+#titulo {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#titulo h1 {
+    text-align: center;
+    color: white;
+}
+
+#formulario {
+    text-align: left;
+    font-size: 22px;
+    padding: 30px;
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+hr {
+    border: none;
+    background-color: #EAEAEA;
+    height: 2px;
+    width: 75%;
+}
+/* INPUTS */
+
+input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 0px;
+    margin: 7px auto;
+    border: none;
+    background-color: #EAEAEA;
+}
+
+.largeinput {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 120px;
+    padding: 10px 0px;
+    margin: 7px auto;
+    border: none;
+    background-color: #EAEAEA;
+}
+.image {
+    background-color: white;
+}
+
+/*textarea:read-write, input:read-write {
+
+
+}*/
+
+/* AÑADIR Y ELIMINAR */
+
+.add {
+    width: 100%;  
+    height: 80px; 
+}
+
+.add img {
+    width: 50px;
+    margin: 20px auto !important;
+    display: block;
+    transition: all 0.4s ease 0s;
+
+}
+.add img:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: all 0.4s ease 0s;
+}
+
+.close {
+    width: 15px;
+    float: right;
+    position: relative;
+    bottom: 15px;
+    right: 15px;
+    transition: all 0.4s ease 0s;
+}
+.close:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: all 0.4s ease 0s;
+}
+
+/* BOTONES */
+
+#botonera {
+    width: 100%;
+}
+.cajaboton {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+.boton {
+    width: 75px;
+    padding: 0px 5px;
+    color: #fff !important;
+    background: #FF0000;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+.boton:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: all 0.4s ease 0s;
+}
+ /* MEDIA QUERIES */
+
+ @media (max-width: 960px) {
+    #formulario{
+        width: 50%;
+    }
+    .cajaboton {
+        width: 100%;
+    }
+    .boton {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 480px) {
+    #formulario{
+        width: 75%;
+    }
+}

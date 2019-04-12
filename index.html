@@ -1,0 +1,135 @@
+<!-- Proyecto Entornos -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aplicación</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="img/app2.png" />
+        <link rel="stylesheet" type="text/css" href="estilo/style.css">
+        <script type="text/javascript" src="script/jscolor.js"></script>
+        <script type="text/javascript" src="script/content.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="contenedor">
+            <br/>
+            <div id="titulo"> 
+                <h1>TITULO APLICACIÓN</h1>
+            </div>
+            <div id="formulario">
+                <form>
+                    <div id="personal">
+                        <h4>Información personal</h4>
+                        <span class="rojo">
+                            Nombre:
+                        </span>
+                        <br/>
+                            <input type="text" name="nombre" value="">
+                        <br/>
+                        <span class="rojo">
+                            Apellidos:
+                        </span>
+                        <br/>
+                            <input type="text" name="apellido" value="">
+                        <br/>
+                        <span class="rojo">
+                            Dirección:
+                        </span>
+                        <br/>
+                            <input type="text" name="direccion" value="">
+                        <br/>
+                        <span class="rojo">
+                            Ciudad:
+                        </span>
+                        <br/>
+                            <input type="text" name="ciudad" value="">
+                        <br/>
+                        <span class="rojo">
+                            Teléfono:
+                        </span>
+                        <br/>
+                            <input type="tel" name="telefono" maxlength="9" value="" pattern="[0-9]{9}" title="Usa el formato de telefono: XXXXXXXXX (9 dígitos)">
+                        <br/>
+                        <span class="rojo">
+                            Correo electrónico:
+                        </span>
+                        <br/>
+                            <input type="email" name="mail" value="" title="Usa el formato de correo: direccion@dominio.extension">
+                        <br/>
+                        <span class="rojo">
+                            Biografía:
+                        </span>
+                        <br/>
+                            <textarea name="bio" class="largeinput" rows="7"></textarea>
+                        <br/>
+                        <span class="rojo">
+                            Imagen:
+                        </span>
+                        <br/>
+                            <input class="image" type="file" name="image" accept="image/*">
+                        <br/>
+                    </div>
+                    <div id="redes">
+                        <h4>Redes sociales</h4>
+                        <span class="rojo">
+                            LinkedIn:
+                        </span>
+                        <br/>
+                        <input type="text" name="linkedin" value="">
+                        <br/>
+                        <span class="rojo">
+                            GitHub:
+                        </span>
+                        <br/>
+                        <input type="text" name="github" value="">
+                        <br/>
+                        <span class="rojo">
+                            Twitter:
+                        </span>
+                        <br/>
+                        <input type="text" name="twitter" value="">
+                        <br/>
+                        <span class="rojo">
+                            Facebook:
+                        </span>
+                        <br/>
+                        <input type="text" name="facebook" value="">
+                        <br/>
+                    </div>
+                    <div id="experiencia">
+                        <h4>Experiencia</h4>
+                        <div id="experience"></div>
+                        <div class="add">
+                            <img onclick="addExperience()" src="img/dibujo.svg"/>
+                        </div>
+                    </div>
+
+                    <div id="formacion">
+                        <h4>Formación</h4>
+                        <div id="education"></div>
+                        <div class="add">
+                            <img onclick="addEducation()" src="img/dibujo.svg"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <hr>
+                    <br/>
+                    <div id="botonera">
+                            <div id="color" class="cajaboton">
+                                <input name="color2" type="hidden" id="color_value" value="00405d" class="boton">
+                                <button class="boton jscolor {valueElement: 'color_value'}">COLOR</button>
+                            </div>
+                            <div id="enviar" class="cajaboton">
+                                <button class="boton">GENERAR</button>
+                            </div>
+                            <div id="borrar" class="cajaboton">
+                                <button class="boton">BORRAR</button>
+                            </div>
+                            <div style="clear:both;"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
