@@ -18,7 +18,7 @@
                 <h1>TITULO APLICACIÓN</h1>
             </div>
             <div id="formulario">
-                <form>
+                <form action="/upload" method="post" enctype="multipart/form-data">
                     <div id="personal">
                         <h4>Información personal</h4>
                         <span class="rojo">
@@ -67,7 +67,7 @@
                             Imagen:
                         </span>
                         <br/>
-                            <input class="image" type="file" name="image" accept="image/*">
+                            <input class="image" type="file" name="photo" accept="image/*">
                         <br/>
                     </div>
                     <div id="redes">
@@ -121,7 +121,7 @@
                                 <button class="boton jscolor {valueElement: 'color_value'}">COLOR</button>
                             </div>
                             <div id="enviar" class="cajaboton">
-                                <button class="boton">GENERAR</button>
+                                <input type="submit" class="boton" value="GENERAR"></input>
                             </div>
                             <div id="borrar" class="cajaboton">
                                 <button class="boton">BORRAR</button>

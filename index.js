@@ -5,13 +5,15 @@ const upload = multer({dest: __dirname + '/uploads/images'});
 const app = express();
 const PORT = 8000;
 
-app.use(express.static('public'));
+app.use(express.static('./'));
 
 app.post('/upload', upload.single('photo'), (req, res) => {
-    if(req.file) {
+    
+//	console.log(req);
+if(req.file) {
         res.json(req.file);
     }
-    else throw 'error';
+   // else throw 'error';
 });
 
 app.listen(PORT, () => {
