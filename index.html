@@ -1,135 +1,161 @@
-<!-- Proyecto Entornos -->
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Aplicación</title>
         <meta charset="utf-8">
-        <link rel="shortcut icon" href="img/app2.png" />
-        <link rel="stylesheet" type="text/css" href="estilo/style.css">
-        <script type="text/javascript" src="script/jscolor.js"></script>
-        <script type="text/javascript" src="script/content.js"></script>
+        <title>Resume generator</title>
+        <meta name="author" content="Luis David Fernández Marín">      
+        <meta name="description" content="Easy to use web profile generator.">
+        <link rel="shortcut icon" href="images/icon.png">
+        <link rel="stylesheet" type="text/css" href="styles/spinner.css">
+        <link rel="stylesheet" type="text/css" href="styles/modals.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <script type="text/javascript" src="scripts/jscolor.js"></script>
+        <script type="text/javascript" src="scripts/content.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div id="contenedor">
+        <div id="container">
             <br/>
-            <div id="titulo"> 
-                <h1>TITULO APLICACIÓN</h1>
+            <div id="title"> 
+                <h1>Resume generator</h1>
             </div>
-            <div id="formulario">
-                <form action="/upload" method="post" enctype="multipart/form-data">
+            <div id="form">
+                <form action="index.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="lang">
                     <div id="personal">
-                        <h4>Información personal</h4>
-                        <span class="rojo">
-                            Nombre:
+                        <h4>Personal information</h4>
+                        <span class="red">
+                            Name
                         </span>
                         <br/>
-                            <input type="text" name="nombre" value="">
+                            <input type="text" name="name" value="">
                         <br/>
-                        <span class="rojo">
-                            Apellidos:
+                        <span class="red">
+                            Last name
                         </span>
                         <br/>
-                            <input type="text" name="apellido" value="">
+                            <input type="text" name="lastname" value="">
                         <br/>
-                        <span class="rojo">
-                            Dirección:
+                        <span class="red">
+                            Address
                         </span>
                         <br/>
-                            <input type="text" name="direccion" value="">
+                            <input type="text" name="address" value="">
                         <br/>
-                        <span class="rojo">
-                            Ciudad:
+                        <span class="red">
+                            City
                         </span>
                         <br/>
-                            <input type="text" name="ciudad" value="">
+                            <input type="text" name="city" value="">
                         <br/>
-                        <span class="rojo">
-                            Teléfono:
+                        <span class="red">
+                            Phone number
                         </span>
                         <br/>
-                            <input type="tel" name="telefono" maxlength="9" value="" pattern="[0-9]{9}" title="Usa el formato de telefono: XXXXXXXXX (9 dígitos)">
+                            <input type="tel" name="phone" maxlength="9" value="" pattern="[0-9]{9}" title="Usa el formato de telefono: XXXXXXXXX (9 dígitos)">
                         <br/>
-                        <span class="rojo">
-                            Correo electrónico:
+                        <span class="red">
+                            Email
                         </span>
                         <br/>
                             <input type="email" name="mail" value="" title="Usa el formato de correo: direccion@dominio.extension">
                         <br/>
-                        <span class="rojo">
-                            Biografía:
+                        <span class="red">
+                            Description
                         </span>
                         <br/>
-                            <textarea name="bio" class="largeinput" rows="7"></textarea>
+                            <textarea name="description" class="large-input" rows="7"></textarea>
                         <br/>
-                        <span class="rojo">
-                            Imagen:
+                        <span class="red">
+                            Photo
                         </span>
                         <br/>
                             <input class="image" type="file" name="photo" accept="image/*">
                         <br/>
                     </div>
-                    <div id="redes">
-                        <h4>Redes sociales</h4>
-                        <span class="rojo">
-                            LinkedIn:
+                    <div id="networks">
+                        <h4>Social networks</h4>
+                        <span class="red">
+                            LinkedIn
                         </span>
                         <br/>
-                        <input type="text" name="linkedin" value="">
+                        <input type="text" name="social[linkedin]" value="">
                         <br/>
-                        <span class="rojo">
-                            GitHub:
+                        <span class="red">
+                            GitHub
                         </span>
                         <br/>
-                        <input type="text" name="github" value="">
+                        <input type="text" name="social[github]" value="">
                         <br/>
-                        <span class="rojo">
-                            Twitter:
+                        <span class="red">
+                            Twitter
                         </span>
                         <br/>
-                        <input type="text" name="twitter" value="">
+                        <input type="text" name="social[twitter]" value="">
                         <br/>
-                        <span class="rojo">
-                            Facebook:
+                        <span class="red">
+                            Facebook
                         </span>
                         <br/>
-                        <input type="text" name="facebook" value="">
+                        <input type="text" name="social[facebook]" value="">
                         <br/>
                     </div>
-                    <div id="experiencia">
-                        <h4>Experiencia</h4>
-                        <div id="experience"></div>
+                    <div id="experience-list">
+                        <h4>Experience</h4>
+                        <div id="experience">
+                            <input type="hidden" name="experience">
+                        </div>
                         <div class="add">
-                            <img onclick="addExperience()" src="img/dibujo.svg"/>
+                            <img onclick="addExperience()" src="images/add.svg"/>
                         </div>
                     </div>
 
-                    <div id="formacion">
-                        <h4>Formación</h4>
-                        <div id="education"></div>
+                    <div id="education-list">
+                        <h4>Education</h4>
+                        <div id="education">
+                            <input type="hidden" name="education">
+                        </div>
                         <div class="add">
-                            <img onclick="addEducation()" src="img/dibujo.svg"/>
+                            <img onclick="addEducation()" src="images/add.svg"/>
                         </div>
                     </div>
                     <br/>
                     <hr>
                     <br/>
-                    <div id="botonera">
-                            <div id="color" class="cajaboton">
-                                <input name="color2" type="hidden" id="color_value" value="00405d" class="boton">
-                                <button class="boton jscolor {valueElement: 'color_value'}">COLOR</button>
+                    <div id="buttons">
+                            <div id="color" class="button-box">
+                                <input name="color" type="hidden" id="color_value" value="00405d" class="button">
+                                <button type="button" class="button jscolor {valueElement: 'color_value'}">Color</button>
                             </div>
-                            <div id="enviar" class="cajaboton">
-                                <input type="submit" class="boton" value="GENERAR"></input>
+                            <div class="button-box">
+                                <button type="submit" class="button" onclick="download()">Generate</button>
                             </div>
-                            <div id="borrar" class="cajaboton">
-                                <button class="boton">BORRAR</button>
+                            <div class="button-box">
+                                <button type="reset" class="button">Clear</button>
                             </div>
-                            <div style="clear:both;"></div>
+                            <div style="clear:both"></div>
                     </div>
                 </form>
             </div>
         </div>
+        <div onclick="clickOut()" class="modal-background" id="response">
+            <div class="modal-card">
+            <!-- loading spinner -->
+            <div id="spinner" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <h2 id="download-text"></h2>
+            </div>
+        </div>
+        <div style="display: block;" class="modal-background" id="language">
+            <div class="modal-card">
+                <h2>Choose your language</h2>
+                <button class="button" onclick="language('en')">English</button>
+                <button class="button" onclick="language('es')">Spanish</button>
+            </div>
+        </div>
+        <footer>
+            <p>Handcrafted with <i class="red">&hearts;</i> by <em><a href="https://github.com/luisdavidfer">Luis David Fernández Marín</a>.</p>
+        </footer>
     </body>
 </html>
